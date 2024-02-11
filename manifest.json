@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "My Bookmarks Extension",
+  "version": "1.0",
+  "description": "Your Bookmarks Move, what you want to move",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/bookmark16.png",
+    "48": "images/bookmark48.png",
+    "128": "images/bookmark128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["background.js"]
+    }
+  ],
+  "permissions": ["bookmarks", "activeTab"],
+  "web_accessible_resources": [
+    {
+      "resources": ["list.html", "add.html", "style.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
